@@ -1,0 +1,14 @@
+//@import ".../../scss/bootstrap/mixins";
+@import "../../scss/bootstrap/variables";
+//@import "../../scss/bootstrap/tables";
+.example-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    min-width: 300px;
+}
+
+.mat-table {
+    overflow: auto;
+    max-height: 500px;
+}

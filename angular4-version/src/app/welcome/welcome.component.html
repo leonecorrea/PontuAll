@@ -1,0 +1,60 @@
+<mat-horizontal-stepper linear>
+  <mat-step [stepControl]="f1">
+    <form [formGroup]="f1">
+      <ng-template matStepLabel>Preencha os dados da viagem</ng-template>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Data" formControlName="date" required>
+
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+
+      </mat-form-field>
+      <mat-form-field>
+        <input type="time" matInput placeholder="Horário para chegar" formControlName="horario" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Endereço de Partida" formControlName="partida" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Endereço de Destino" formControlName="destino" required>
+      </mat-form-field>
+
+      <div>
+        <button mat-button matStepperNext>Próximo</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Selecione a Carona</ng-template>
+
+      <mat-list>
+        <h3 mat-subheader>Viagens Iniciadas</h3>
+        <mat-radio-group>
+        <mat-list-item *ngFor="let viagem of viagens">
+            <mat-radio-button value="{{viagem.name}}" color="primary"></mat-radio-button>
+            <mat-icon mat-list-icon>{{viagem.icon}}</mat-icon>
+            <h4 mat-line>{{viagem.name}}</h4>
+            <p mat-line> {{viagem.updated | date}} </p>
+          </mat-list-item>
+        </mat-radio-group>
+        <!-- <mat-divider></mat-divider>
+        <h3 mat-subheader>Notes</h3>
+        <mat-list-item *ngFor="let note of notes">
+          <mat-icon mat-list-icon>note</mat-icon>
+          <h4 mat-line>{{note.name}}</h4>
+          <p mat-line> {{note.updated | date}} </p>
+        </mat-list-item> -->
+      </mat-list>
+
+      <div>
+        <button mat-button matStepperPrevious>Voltar</button>
+        <button mat-button matStepperNext>Próximo</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Concluido</ng-template>
+    Agora é só aproveitar a viagem!
+  </mat-step>
+</mat-horizontal-stepper>

@@ -1,0 +1,70 @@
+<mat-sidenav-container class=" v100" role="header">
+  <mat-sidenav #sidenav class="cabecalho-sidenav">
+      <div class="cabecalho">
+        <div class="header-container">
+          <div class="header-imagem"></div>
+          <p>Bruno Leone</p>
+        </div>
+        <div class="header-menu">
+          <a routerLink="/dashboard" mat-menu-item> Dashboard </a>
+          <a routerLink="/minhas-rotas" mat-menu-item> Minhas Rotas </a>
+          <a routerLink="/profile" mat-menu-item> Perfil </a>
+          <a routerLink="/transacoes" mat-menu-item> Transações </a>
+          <a routerLink="/settings" mat-menu-item> Configurações </a>
+          <a routerLink="/about" mat-menu-item> Sobre </a>
+          <a (click)="logout()" mat-menu-item> Sair </a>
+        </div>
+      </div>
+  </mat-sidenav>
+
+  <section id="home-header">
+    <div class="container-header">
+      <button mat-icon-button (click)="sidenav.open()">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <span style="flex: 1 1 1e-09px; box-sizing: border-box;"></span>
+
+      <!--button mat-icon-button>
+        <mat-icon>account_circle</mat-icon>
+      </button-->
+
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/settings">
+          <span>Configurações</span>
+        </button>
+        <button mat-menu-item routerLink="/signup">
+          <span>Ajuda e feedback</span>
+        </button>
+      </mat-menu>
+
+    </div>
+  </section>
+
+  <div class="main container-fluid">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>
+
+<!--mat-sidenav-container role="header" class="">
+
+  <section id="home-header">
+    <div class="container-header container">
+
+      <img src="/assets/logo.png" id="logo">
+
+      <span style="flex: 1 1 1e-09px; box-sizing: border-box;"></span>
+
+      <a mat-button routerLink="/signup">Cadastrar</a>
+      <a mat-raised-button color="warn" routerLink="/login">Entrar</a>
+
+    </div>
+  </section>
+
+  <div class="main container-fluid">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container-->

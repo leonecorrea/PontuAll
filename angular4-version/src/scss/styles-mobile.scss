@@ -1,0 +1,19 @@
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/responsive-utilities";
+@import "bootstrap/media";
+@import "bootstrap/grid";
+@import "bootstrap/component-animations";
+@import "bootstrap/mixins";
+
+//900px
+@media screen and (max-width: 900px) {
+  .visible-mobile {
+    display: block !important;
+  }
+}
+@media screen and (min-width: 901px) {
+  .hidden-mobile {
+    display: block !important;
+  }
+}

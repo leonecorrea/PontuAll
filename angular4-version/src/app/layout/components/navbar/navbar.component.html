@@ -1,0 +1,19 @@
+<mat-sidenav-container role="header">
+
+  <section id="home-header">
+    <div class="container-header container">
+
+      <img src="/assets/logo.png" id="logo">
+
+      <span style="flex: 1 1 1e-09px; box-sizing: border-box;"></span>
+
+      <a mat-button  routerLink="/signup">Cadastrar</a>
+      <a mat-raised-button color="warn" routerLink="/login">Entrar</a>
+
+    </div>
+  </section>
+
+  <div class="main container-fluid">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>

@@ -1,0 +1,40 @@
+.example-card {
+    width: 400px;
+}
+
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}
+
+.grupo-cards {
+    display: -webkit-box; //display: -ms-flexbox;
+    display: flex; //-ms-flex-wrap: wrap;
+    flex-wrap: wrap; // margin-right: 15px;
+}
+
+.div-card-dash {
+    flex: 1 1 25%;
+    box-sizing: border-box;
+    max-width: 25%;
+}
+
+.card-dash {
+    height: 100px;
+    margin: 5px;
+}
+
+.chart {
+    margin: 5px;
+}
+
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}
+
+.button-fixed {
+    position: absolute;
+    bottom: 0;
+    height: 70px;
+}

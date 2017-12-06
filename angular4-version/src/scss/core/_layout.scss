@@ -1,0 +1,400 @@
+//Reset definitions
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.conteudo-total {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+}
+
+.main {
+    margin-top: 70px;
+}
+
+//Container e menu
+.main-container {
+    width: 100%; //height: 100%;
+    border: 0px solid rgba(0, 0, 0, 0.5);
+}
+
+
+/* Let's get this party started */
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255, 0, 0, 0.8);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(255, 0, 0, 0.4);
+}
+
+.page-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 40px 1rem;
+    height: 100%;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.height-100 {
+    min-height: 100vh;
+}
+
+.text-center h1,
+h2,
+p,
+a {
+    text-align: center;
+}
+
+.full-width {
+    width: 100% !important;
+}
+
+.bg-primary {
+    background: #3f51b5!important;
+    color: #fff!important;
+}
+
+.auth {
+    .mat-card-header-text {
+        margin: auto !important;
+    }
+}
+
+.link-auth a {
+    color: rgba(0, 0, 0, .4);
+    margin: 20px 20px 0 0;
+    text-decoration: none;
+    text-orientation: center;
+}
+
+.container-header {
+    //max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    box-sizing: border-box;
+    max-height: 100%;
+    flex-flow: row wrap;
+    align-content: center flex-start;
+    align-items: center;
+    height: 70px; //min-width: 900px
+}
+
+#logo {
+    font-family: Roboto;
+    text-transform: uppercase;
+    color: rgba(255, 0, 0, 0.952);
+    a {
+        text-decoration: none;
+    }
+}
+
+.button-header {
+    margin: 10px 0 10px 0;
+}
+
+.no-selected {
+    -webkit-touch-callout: none; // iPhone OS, Safari
+    -webkit-user-select: none; // Chrome, Safari 3
+    -khtml-user-select: none; // Safari 2
+    -moz-user-select: none; // Firefox
+    -ms-user-select: none; // IE10+
+    user-select: none; // Possível implementação no futuro
+    cursor: default;
+}
+
+.section-home {
+    width: auto;
+}
+
+.section-home {
+    position: absolute;
+}
+
+.card-carona {
+    width: 100%;
+}
+
+.espaco-caronas {
+    //display: flex !important;
+    //padding-right: 10px;
+    //overflow-y: scroll;
+    //overflow-x: hidden;
+}
+
+.img-avatar {
+    height: 50px;
+    width: auto;
+    border-radius: 50px;
+}
+
+.title-definition {
+    margin: 8% 0px;
+    margin-bottom: 0%;
+    font-size: 46px;
+    text-align: center;
+    color: #636363;
+}
+
+.mat-card-header-text {
+    margin: auto !important;
+}
+
+#header-novo {
+    background-color: #e74c3c;
+}
+
+section {
+    //display: table;
+    width: 100%;
+}
+
+.height-80 {
+    height: 80vh;
+}
+
+.height-50 {
+    height: 50vh;
+}
+
+.height-100 {
+    min-height: 100vh;
+}
+
+.content {
+    color: #FFFFFF;
+    display: absolute;
+    vertical-align: middle;
+    padding: 7%;
+    font-size: 36px;
+    h1 {
+        margin-top: 10%;
+    }
+}
+
+#content {
+    z-index: 1;
+    padding-bottom: 10%;
+}
+
+.centro {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+}
+
+.material-docs-app {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.botao-groupo {
+    padding: 0px;
+    margin: 0px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+#button-destaque-header {
+    border-radius: 50px;
+}
+
+.botoes-header {
+    padding: 5px;
+}
+
+.imagem-mapa {
+    img {
+        height: 300px;
+        width: auto;
+        float: right;
+        left: 0px;
+        z-index: 1;
+    }
+}
+
+//Search maps
+
+/*.searchbox {
+  position: relative;
+  background: #fff;
+  border-radius: 2px;
+  box-sizing: border-box;
+  width: 392px;
+  height: 48px;
+  border-bottom: 1px solid transparent;
+  padding: 12px 104px 11px 64px;
+  transition-property: background,box-shadow;
+  transition-duration: 0.3s;
+}
+.searchbox-shadow {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 -1px 0px rgba(0,0,0,0.02);
+}
+#content-container {
+  background: #fff;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 0;
+  white-space: normal;
+}*/
+
+.search-box {
+    width: auto;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+}
+
+.visible-mobile {
+    display: none;
+}
+
+.hidden-mobile {
+    display: none;
+}
+
+.v100 {
+    height: 100vh;
+}
+
+.v90 {
+    height: 90vh;
+}
+
+.v80 {
+    height: 80vh;
+}
+
+agm-map {
+    width: 100%;
+    height: 100%;
+}
+
+#home-header {
+    z-index: 9999;
+    display: block;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .26);
+    flex-wrap: wrap;
+    -webkit-box-direction: normal;
+    width: 100%;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 100);
+    position: fixed;
+    img {
+        height: 50px;
+        width: auto;
+    }
+}
+
+.cabecalho-sidenav {
+    // width: 500px;
+    overflow: hidden;
+    height: 100vh;
+    position: fixed;
+}
+
+.cabecalho {
+    width: 300px;
+}
+
+.header-container {
+    background-color: #0066eb;
+    color: #ffff;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+    p,
+    h1,
+    h2,
+    h3,
+    h4 {
+        padding-top: 10%;
+    }
+}
+
+.header-menu a {
+    text-align: center;
+}
+
+.cabecalho .header-imagem {
+    background-image: url('/assets/brunoleone.jpg'); //https://material.angular.io/assets/img/examples/shiba1.jpg
+    background-size: cover;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    margin: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    border: 2px #fff;
+}
+
+.logo {
+    height: 70px;
+    text-align: center;
+    img {
+        height: 100%;
+    }
+}
