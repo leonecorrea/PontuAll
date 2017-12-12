@@ -44,6 +44,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FixedButtonMenuComponent } from './components/fixed-button-menu/fixed-button-menu.component';
 import { LayoutRoutingModule } from './layout.routing.module';
 import { AuthModule } from '../auth/auth.module';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AuthService } from '../shared';
 
 @NgModule({
   imports: [
@@ -84,6 +86,7 @@ import { AuthModule } from '../auth/auth.module';
     AuthModule
   ],
   declarations: [NavbarComponent, FixedButtonMenuComponent],
-  exports: [NavbarComponent, FixedButtonMenuComponent]
+  exports: [NavbarComponent, FixedButtonMenuComponent],
+  providers: [AuthService, AngularFireAuth]
 })
 export class LayoutModule {}

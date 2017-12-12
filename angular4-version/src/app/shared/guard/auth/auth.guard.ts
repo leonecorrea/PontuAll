@@ -15,7 +15,7 @@ export class AuthGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    if (localStorage.getItem('firebase:authUser:AIzaSyDJkfx-JMHj4DwWzYZ3LVo3HEduujdxkFk:[DEFAULT]')) {
+    if (localStorage.getItem('firebase:authUser:AIzaSyDIHgJJuJrbeTiVnR8h2d0yKRKuPHZVgeo:[DEFAULT]')) {
       return true;
     } else {
       this.router.navigate(['/login']);

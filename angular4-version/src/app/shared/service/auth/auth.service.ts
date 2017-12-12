@@ -9,33 +9,26 @@ import { stringify } from 'querystring';
 @Injectable()
 export class AuthService {
   private urlLogin: any = '';
-  public data: {};
   public userLoggedinOAuth = false;
 
   constructor(private afAuth: AngularFireAuth, private router: Router) {}
 
-  loginWithEmailAndPassword(u) {
-    // Função para login com email e senha
+  loginWithEmailAndPassword(u) { // Função para login com email e senha
     return;
   }
 
-  loginGoogle() {
-    // Função para OAuth Google
+  loginGoogle() { // Função para OAuth Google
     this.loginWithGoogleRedirect();
   }
 
-  loginWithGooglePopup() {
-    // Login Google Com Popup
+  loginWithGooglePopup() { // Login Google Com Popup
     const provider = new firebase.auth.GoogleAuthProvider();
 
     provider.setCustomParameters({
       '': ''
     });
 
-    firebase
-      .auth()
-      .signInWithPopup(provider)
-      .then(function(result) {
+    firebase.auth().signInWithPopup(provider).then(function(result) {
         // This gives you a Google Access Token. You can use it to access the Google API.
         const token = result.credential.accessToken;
         console.log(token);
@@ -58,22 +51,17 @@ export class AuthService {
       });
   }
 
-  loginWithGoogleRedirect() {
-    // Login com google redirect
-    // Inicializando a autenticação
+  loginWithGoogleRedirect() { // Login com google redirect
     const provider = new firebase.auth.GoogleAuthProvider();
 
     provider.setCustomParameters({
-      redirectUrl: 'http://localhost/dashboard'
+      'redirectUrl': 'http://localhost/dashboard'
     });
 
     // Redirecionar para pagina de autenticação
     firebase.auth().signInWithRedirect(provider);
 
-    firebase
-      .auth()
-      .getRedirectResult()
-      .then(function(result) {
+    firebase.auth().getRedirectResult().then(function(result) {
         if (result.credential) {
           // This gives you a Google Access Token. You can use it to access the Google API.
           const token = result.credential.accessToken;
@@ -96,8 +84,8 @@ export class AuthService {
       });
   }
 
+  // Verifica se o usuário já está autenticado pelo OAuth do Google
   isUserEqual(googleUser, firebaseUser) {
-    // Verifica se o usuário já está autenticado pelo OAuth do Google
     if (firebaseUser) {
       const providerData = firebaseUser.providerData;
       for (let i = 0; i < providerData.length; i++) {
@@ -128,10 +116,7 @@ export class AuthService {
             googleUser.getAuthResponse().id_token
           );
           // Sign in with credential from the Google user.
-          firebase
-            .auth()
-            .signInWithCredential(credential)
-            .catch(function(error) {
+          firebase.auth().signInWithCredential(credential).catch(function(error) {
               // Handle Errors here.
               const errorCode = error.code;
               const errorMessage = error.message;
@@ -155,19 +140,15 @@ export class AuthService {
 
   userIsLoggedin() {
     // Função para ver se usuário já está logado
-    if (
-      localStorage.getItem(
-        'firebase:authUser:AIzaSyDJkfx-JMHj4DwWzYZ3LVo3HEduujdxkFk:[DEFAULT]'
-      )
-    ) {
-      const dados = JSON.parse(
-        localStorage.getItem(
-          'firebase:authUser:AIzaSyDJkfx-JMHj4DwWzYZ3LVo3HEduujdxkFk:[DEFAULT]'
-        )
-      );
-      this.router.navigate(['/dashboard']);
+    if (localStorage.getItem('firebase:authUser:AIzaSyDIHgJJuJrbeTiVnR8h2d0yKRKuPHZVgeo:[DEFAULT]')) {
+      const dados = JSON.parse(localStorage.getItem('firebase:authUser:AIzaSyDIHgJJuJrbeTiVnR8h2d0yKRKuPHZVgeo:[DEFAULT]'));
+        this.router.navigate(['/dashboard']);
       console.log(dados);
     }
+  }
+
+  getDataWithGoogle() {
+    return JSON.parse(localStorage.getItem('firebase:authUser:AIzaSyDIHgJJuJrbeTiVnR8h2d0yKRKuPHZVgeo:[DEFAULT]'));
   }
 }
 // https://firebase.google.com/docs/auth/web/google-signin?hl=pt-br

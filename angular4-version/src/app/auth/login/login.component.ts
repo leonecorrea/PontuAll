@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit, HostBinding } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../../shared/service/auth/auth.service';
+import { AuthService } from '../../shared';
 import { OnChanges } from '@angular/core';
 
 @Component({
@@ -35,14 +35,15 @@ export class LoginComponent implements OnInit {
          : '';
   }
 
-  login() {
+  login() { // Login With Email And Password
     const auth = this.authService.loginWithEmailAndPassword(this.f.value);
     if (auth) {
-      // console.log(auth);
+
+      // ...
     }
   }
 
-  loginGoogle() {
+  loginGoogle() { // Login with Google OAuth
     this.authService.loginGoogle();
   }
 
