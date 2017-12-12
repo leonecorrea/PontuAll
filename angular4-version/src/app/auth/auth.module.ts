@@ -5,13 +5,13 @@ import { AuthService } from '../shared';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
 
-import { firebaseConfig } from '../classes/FirebaseConfig';
+import { environment } from '../../environments/environment';
 
 @NgModule({
   imports: [
     CommonModule,
     AngularFireModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   declarations: [],
   providers: [AuthService, AngularFireAuth]

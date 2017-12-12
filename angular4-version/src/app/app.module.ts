@@ -44,6 +44,8 @@ import { FullLayoutComponent } from './layout/full-layout.component';
 import { SimpleLayoutComponent } from './layout/simple-layout.component';
 import { Error404Component } from './error/error-404/error-404.component';
 import { LoadInicialComponent } from './layout/load-inicial/load-inicial.component';
+import { AuthGuard } from './shared';
+import { AuthService } from './shared';
 
 @NgModule({
   declarations: [
@@ -88,6 +90,7 @@ import { LoadInicialComponent } from './layout/load-inicial/load-inicial.compone
     BrowserAnimationsModule,
     AppRoutingModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [AuthGuard, AuthService]
 })
 export class AppModule {}

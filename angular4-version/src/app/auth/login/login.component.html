@@ -16,7 +16,7 @@
         <form [formGroup]="f">
           <div>
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Email ou nome de usuario" formControlName="email" required>
+              <input matInput placeholder="Email ou Usuário" formControlName="email" required>
               <mat-error *ngIf="f.controls.email.invalid">{{getErrorMessage()}}</mat-error>
             </mat-form-field>
           </div>
@@ -37,7 +37,7 @@
         </form>
 
           <div class="campo-login">
-            <button mat-raised-button class="button-login" (click)="loginGoogle()">
+            <button mat-raised-button color="warn" class="button-login" (click)="loginGoogle()">
               <i class="fa fa-google" aria-hidden="true"></i>
               Google
             </button>

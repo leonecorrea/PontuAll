@@ -1,2 +1,2 @@
-import * from './guard';
-import * from './service';
+export * from './service';
+export * from './guard';

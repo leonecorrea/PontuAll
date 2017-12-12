@@ -1,7 +1,8 @@
 import { Component, OnInit, AfterViewInit, HostBinding } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../../shared';
+import { AuthService } from '../../shared/service/auth/auth.service';
+import { OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -20,22 +21,12 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.f = this.formBuilder.group({
-      email: [null, [Validators.required, Validators.email]],
+      email: [null, [Validators.required]],
       password: [null, Validators.required],
       remember_me: [null]
     });
 
-    if (localStorage.getItem('firebase:authUser:AIzaSyDJkfx-JMHj4DwWzYZ3LVo3HEduujdxkFk:[DEFAULT]') != null) {
-      this.router.navigate(['/dashboard']);
-    } else {
-      return;
-    }
-  }
-
-  onSubmit() {
-    console.clear();
-    console.log(this.f.value);
-    this.router.navigate(['/dashboard']);
+    this.authService.userIsLoggedin();
   }
 
   getErrorMessage() {
@@ -45,22 +36,14 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    const auth = this.authService.login(this.f.value);
+    const auth = this.authService.loginWithEmailAndPassword(this.f.value);
     if (auth) {
       // console.log(auth);
     }
   }
 
   loginGoogle() {
-    this.authService.loginGoogle(), this.router.navigate(['/dashboard']);
-    // if (localStorage.getItem('promo')) {
-    //   this.router.navigate(['/dashboard']);
-    // }
-  }
-
-  logoutGoogle() {
-    this.authService.logoutGoogle();
-    this.router.navigate(['/']);
+    this.authService.loginGoogle();
   }
 
 }
